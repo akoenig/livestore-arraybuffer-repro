@@ -1,0 +1,31 @@
+{
+  "name": "sync-backend",
+  "version": "0.0.53",
+  "type": "module",
+  "exports": {
+    "./sync-impl": {
+      "types": "./dist/sync-impl/index.d.ts",
+      "default": "./dist/sync-impl/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "./sync-impl": ["./dist/sync-impl/index.d.ts"]
+    }
+  },
+  "scripts": {
+    "deploy": "wrangler publish",
+    "test": "echo 'No tests yet'"
+  },
+  "dependencies": {
+    "@livestore/common": "workspace:*",
+    "@livestore/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20240614.0",
+    "wrangler": "^3.60.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
